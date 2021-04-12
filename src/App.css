@@ -2,33 +2,18 @@
   height: 100vh;
   display: flex;
   background-color: #414352;
+  padding:0px;
 }
 #wrapper {
   margin: auto;
-  padding: 20px;
   font-family: sans-serif;
 }
-#break-label {
+.label {
   color: #aaaebc;
 }
-#break-decrement {
-}
-#break-length {
+.length {
   color: #aaaebc;
   padding: 10px;
-}
-#break-increment {
-}
-#session-label {
-  color: #aaaebc;
-}
-#session-decrement {
-}
-#session-length {
-  color: #aaaebc;
-  padding: 10px;
-}
-#session-increment {
 }
 #timer-label {
   color: #aaaebc;
@@ -65,10 +50,92 @@
 
 #settings {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 30px;
 }
 
-#break-setting {
-  margin-right: 100px;
+@media screen and (max-width: 400px){
+  #circle{
+    width: min(100vw, 100vh);
+    height: min(100vw, 100vh);
+  }
+  #timer-label {
+    font-size: min(10vw, 10vh);
+  }
+  #time-left {
+    font-size: min(15vw, 15vh);
+  }
+  #circle {
+    padding: min(20vw, 20vh);
+  }
+  #buttons {
+    margin-top: min(10vw, 10vh);
+  }
 }
+@media screen and (max-height: 485px){
+  #circle{
+    width: min(100vw, 80vh);
+    height: min(100vw, 80vh);
+  }
+  #timer-label {
+    font-size: min(10vw, 7vh);
+  }
+  #time-left {
+    font-size: min(15vw, 10vh);
+  }
+  #circle {
+    padding: min(20vw, 20vh);
+  }
+  #buttons {
+    margin-top: min(10vw, 5vh);
+  }
+  #settings {
+    margin-bottom: 1vh;
+  }
+}
+
+@media screen and (max-width: 250px){
+  .label {
+    font-size: 0.85rem;
+  }
+  .length {
+    font-size: 0.85rem;
+  }
+  #settings {
+    margin: auto;
+    flex-direction: column;
+    max-width: fit-content;
+  }
+  .btn {
+    font-size: min(7vw, 7vh);
+  }
+  #start_stop {
+    margin-right: 10px;
+  }
+  #buttons {
+    margin-top: min(5vw, 5vh);
+  }
+}
+
+@media screen and (max-height: 300px){
+  #circle{
+    width: min(100vw, 75vh);
+    height: min(100vw, 75vh);
+  }
+  .label {
+    font-size: 0.85rem;
+  }
+  .length {
+    font-size: 0.85rem;
+  }
+  .btn {
+    font-size: min(7vw, 5vh);
+  }
+  #start_stop {
+    margin-right: 10px;
+  }
+  #buttons {
+    margin-top: min(5vw, 5vh);
+  }
+}
+

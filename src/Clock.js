@@ -42,7 +42,7 @@ class Clock extends React.Component {
     let length = this.state.break_length - 1;
     if (length > 0) {
         this.setState({break_length: length});
-        if (!this.state.is_session && this.state.intervalId == 0)
+        if (!this.state.is_session && this.state.intervalId === 0)
           this.setState({time_left: length*60});
       
     }
@@ -51,7 +51,7 @@ class Clock extends React.Component {
     let length = this.state.break_length + 1;
     if (length <= 60) {
         this.setState({break_length: length});
-        if (!this.state.is_session && this.state.intervalId == 0)
+        if (!this.state.is_session && this.state.intervalId === 0)
           this.setState({time_left: length*60});
     }
   }
@@ -60,7 +60,7 @@ class Clock extends React.Component {
     let length = this.state.session_length - 1;
     if (length > 0) {
         this.setState({session_length: length});
-      if (this.state.is_session && this.state.intervalId == 0)
+      if (this.state.is_session && this.state.intervalId === 0)
           this.setState({time_left: length*60});
     }
   }
@@ -68,7 +68,7 @@ class Clock extends React.Component {
     let length = this.state.session_length + 1;
     if (length <= 60) {
         this.setState({session_length: length});
-        if (this.state.is_session && this.state.intervalId == 0)
+        if (this.state.is_session && this.state.intervalId === 0)
           this.setState({time_left: length*60});
     }
   }
@@ -81,7 +81,7 @@ class Clock extends React.Component {
       return;
     }
     
-    if (timer == 0) {
+    if (timer === 0) {
       this.playBeep();    
       this.setState({time_left: timer});
       return;
@@ -101,7 +101,7 @@ class Clock extends React.Component {
   }
     
   handleStartStop(){
-    const isStart = this.state.start_stop == START_LABEL;
+    const isStart = this.state.start_stop === START_LABEL;
     this.setState({start_stop: isStart ? STOP_LABEL : START_LABEL});
     
     if (isStart) {
@@ -131,24 +131,24 @@ class Clock extends React.Component {
       <div id="clock">
         <div id="settings">
           <div id="break-setting">
-            <div id="break-label">Break (mins)</div>
-            <button id="break-decrement" class="btn btn-sm btn-outline-secondary" onClick={this.handleBreakDecrement.bind(this)}> <i class="fas fa-minus"></i> </button>
-            <span id="break-length">{this.state.break_length}</span>
-            <button id="break-increment" class="btn btn-sm btn-outline-secondary" onClick={this.handleBreakIncrement.bind(this)}><i class="fas fa-plus"></i></button>
+            <div className="label">Break (mins)</div>
+            <button className="btn btn-sm btn-outline-secondary" onClick={this.handleBreakDecrement.bind(this)}> <i className="fas fa-minus"></i> </button>
+            <span className="length">{this.state.break_length}</span>
+            <button className="btn btn-sm btn-outline-secondary" onClick={this.handleBreakIncrement.bind(this)}><i className="fas fa-plus"></i></button>
           </div>
           <div id="session-setting">
-            <div id="session-label">Session (mins)</div>
-            <div id="session-decrement" class="btn btn-sm btn-outline-secondary" onClick={this.handleSessionDecrement.bind(this)}> <i class="fas fa-minus"></i> </div>
-            <span id="session-length">{this.state.session_length}</span>          
-            <div id="session-increment" class="btn btn-sm btn-outline-secondary" onClick={this.handleSessionIncrement.bind(this)}> <i class="fas fa-plus"></i> </div>
+            <div className="label">Session (mins)</div>
+            <div className="btn btn-sm btn-outline-secondary" onClick={this.handleSessionDecrement.bind(this)}> <i className="fas fa-minus"></i> </div>
+            <span className="length">{this.state.session_length}</span>          
+            <div className="btn btn-sm btn-outline-secondary" onClick={this.handleSessionIncrement.bind(this)}> <i className="fas fa-plus"></i> </div>
           </div>
         </div> 
         <div id="circle">
           <div id="timer-label" >{this.state.is_session ? SESSION_LABEL : BREAK_LABEL}</div>
           <div id="time-left" >{this.formatTimer(this.state.time_left)}</div>
     <div id="buttons">
-          <button id="start_stop" onClick={this.handleStartStop.bind(this)} class="btn btn-outline-primary">{this.state.start_stop}</button>
-          <button id="reset" onClick={this.handleReset.bind(this)} class="btn btn-outline-secondary">{RESET_LABEL}</button>
+          <button id="start_stop" onClick={this.handleStartStop.bind(this)} className="btn btn-outline-primary">{this.state.start_stop}</button>
+          <button id="reset" onClick={this.handleReset.bind(this)} className="btn btn-outline-secondary">{RESET_LABEL}</button>
     </div>
           <audio src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" id="beep"></audio>
 </div>
