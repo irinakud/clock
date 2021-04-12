@@ -3,7 +3,7 @@ import Clock from './Clock'
 
 function App() {
   return (
-    <div class="container-fluid">
+    <div className="container-fluid">
     <div id="wrapper">
       <Clock />
     </div>

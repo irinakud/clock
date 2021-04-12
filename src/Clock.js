@@ -1,4 +1,5 @@
 import React from 'react'
+import sound from './Beep.wav'
 
 const BREAK_LENGTH = 5;
 const SESSION_LENGTH = 25;
@@ -150,7 +151,7 @@ class Clock extends React.Component {
           <button id="start_stop" onClick={this.handleStartStop.bind(this)} className="btn btn-outline-primary">{this.state.start_stop}</button>
           <button id="reset" onClick={this.handleReset.bind(this)} className="btn btn-outline-secondary">{RESET_LABEL}</button>
     </div>
-          <audio src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" id="beep"></audio>
+          <audio src={sound} id="beep"></audio>
 </div>
       </div>
     );
